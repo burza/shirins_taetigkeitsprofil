@@ -1,0 +1,275 @@
+\documentclass[draft=false,paper=a4,twoside=false,fontsize=11pt,headsepline,BCOR10mm,DIV11]{scrbook}
+\usepackage[ngerman,english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[babel,german=quotes]{csquotes}
+%% see http://www.tex.ac.uk/cgi-bin/texfaq2html?label=uselmfonts
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+\usepackage{libertine}
+\usepackage{pifont}
+\usepackage{microtype}
+\usepackage{textcomp}
+%% \usepackage[intoc,german,prefix]{nomencl}
+\usepackage{setspace}
+\usepackage{makeidx}
+\usepackage{listings}
+\usepackage{natbib}
+\usepackage[ngerman,colorlinks=true]{hyperref}
+\usepackage{soul}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{glossaries}
+%%\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage[final]{pdfpages}
+\usepackage[printer]{hawstyle}
+% \usepackage{hawstyle}
+\usepackage{caption}
+\usepackage{lipsum} %% for sample text
+
+\usepackage{float}
+\restylefloat{table}
+\restylefloat{figure}
+
+
+\definecolor{middlegray}{rgb}{0.5,0.5,0.5}
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+
+%% define some colors
+\colorlet{BackgroundColor}{gray!20}
+\colorlet{KeywordColor}{blue}
+\colorlet{CommentColor}{black!60}
+%% for tables
+\colorlet{HeadColor}{gray!60}
+\colorlet{Color1}{blue!10}
+\colorlet{Color2}{white}
+
+%% configure colors
+\HAWifprinter{
+  \colorlet{BackgroundColor}{gray!20}
+  \colorlet{KeywordColor}{black}
+  \colorlet{CommentColor}{gray}
+  % for tables
+  \colorlet{HeadColor}{gray!60}
+  \colorlet{Color1}{gray!40}
+  \colorlet{Color2}{white}
+}{}
+\lstset{%
+  language=JAVA,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  tabsize=2,
+  numbersep=-10pt,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{KeywordColor}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{middlegray},
+  backgroundcolor=\color{BackgroundColor},
+  captionpos=b,
+  breaklines=true,
+  fontadjust=true,
+  flexiblecolumns=true
+}
+\lstset{escapeinside={(*@}{@*)}, % used to enter latex code inside listings
+        morekeywords={uint32_t, int32_t}
+}
+
+% \usepackage{courier}
+% \usepackage{caption}
+% \lstset{
+%   basicstyle=\footnotesize\ttfamily, % Standardschrift
+%   numbers=left,               % Ort der Zeilennummern
+%   numberstyle=\tiny,          % Stil der Zeilennummern
+%   %stepnumber=2,               % Abstand zwischen den Zeilennummern
+%   numbersep=5pt,              % Abstand der Nummern zum Text
+%   tabsize=2,                  % Groesse von Tabs
+%   extendedchars=true,         %
+%   breaklines=true,            % Zeilen werden Umgebrochen
+%   keywordstyle=\color{red},
+%   %frame=b,         
+%   %        keywordstyle=[1]\textbf,    % Stil der Keywords
+%   %        keywordstyle=[2]\textbf,    %
+%   %        keywordstyle=[3]\textbf,    %
+%   %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+%   stringstyle=\color{white}\ttfamily, % Farbe der String
+%   showspaces=false,           % Leerzeichen anzeigen ?
+%   showtabs=false,             % Tabs anzeigen ?
+%   xleftmargin=17pt,
+%   framexleftmargin=17pt,
+%   framexrightmargin=5pt,
+%   framexbottommargin=4pt,
+%   %backgroundcolor=\color{lightgray},
+%   showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+% }
+% %\DeclareCaptionFont{blue}{\color{blue}} 
+% 
+% %\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+% \DeclareCaptionFont{white}{\color{white}}
+% \DeclareCaptionFormat{listing}{\colorbox{HeadColor}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+% \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+
+\ifpdfoutput{
+  \hypersetup{bookmarksopen=false,bookmarksnumbered,linktocpage}
+}{}
+
+%% more fancy C++
+\DeclareRobustCommand{\cxx}{C\raisebox{0.25ex}{{\scriptsize +\kern-0.25ex +}}}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+% unknown hyphenations
+\hyphenation{
+}
+
+%% recalculate text area
+\typearea[current]{last}
+
+\makeindex
+%% \makenomenclature
+\makeglossaries
+
+\begin{document}
+\selectlanguage{ngerman}
+
+%%%%%
+%% customize (see readme.pdf for supported values)
+\HAWThesisProperties{Author={Shirin Bediako \\ MatrNr.: 2088775 \\ Sahlenburger Str. 4 \\ 22309 Hamburg \\ shirin.bediako@haw-hamburg.de}
+                    ,Title={Sozial-emotionale Kompetenzen durch Spiel und Bewegung fördern}
+                    ,SubTitle={Welche Chancen bieten Spiel und Bewegung für die Entwicklung von soziale-emotionalen Kompetenzen?}
+                    ,EnglishTitle={Inklusive Frühpädagogik Deutschland zwischen Inklusion und Integration}
+                    ,ThesisType={Hausarbeit}
+                    ,ExaminationType={Einführung Kompetenzentwicklung in der Kindheit}
+                    ,DegreeProgramme={Bildung und Erziehung in der Kindheit}
+                    ,ThesisExperts={Prof. Dr. habil. Dagmar Bergs-Winkels}
+                    % ,ThesisExperts={Prof.\ Dr.\ Zhen Ru Dai \and Prof.\ Dr.\ Stefan Sarstedt}
+                    ,ReleaseDate={28. August 2013}
+                  }
+
+%% title
+\frontmatter
+
+%% output title page
+\maketitle
+
+\onehalfspacing
+
+%% add abstract pages
+%% note: this is one command on multiple lines
+% \HAWAbstractPage
+%% German abstract
+% {keywords...}%
+% {text...}
+%% English abstract
+% {keywords...}%
+% {text...}
+
+\newpage
+\singlespacing
+
+\tableofcontents
+\newpage
+%% enable if these lists should be shown on their own page
+% \listoftables
+% \listoffigures
+% \lstlistoflistings
+
+%% main
+\mainmatter
+\onehalfspacing
+\input{glossar}
+%--------------------------------------------------------------------------------------------------- 
+% Der erste Teil der Arbeit:
+%---------------------------------------------------------------------------------------------------
+\typeout{===== File: EINLEITUNG}
+\input{kapitel/einleitung/einleitung}
+
+%---------------------------------------------------------------------------------------------------	
+% Der zweite Teil der Arbeit:
+%---------------------------------------------------------------------------------------------------
+\typeout{===== File: HAUPTTEIL}
+\input{kapitel/hauptteil/hauptteil}
+
+%---------------------------------------------------------------------------------------------------
+% Der dritte Teil der Arbeit
+%---------------------------------------------------------------------------------------------------
+% \typeout{===== File: ZUSAMMENFASSUNG}
+% \input{kapitel/schluss/fazit}
+
+
+%%%%
+
+% \clearpage
+\cleardoublepage
+% \typeout{===== Section: Anhang}
+% \appendix
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Kinderankreuzliste,chap:anhang_1}, scale=0.80, offset=6mm -5mm]{anhang_1.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Berechnung für die Arbeit am Kind,chap:anhang_2}, scale=0.80, offset=6mm -5mm]{anhang_2.pdf} 
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Personalbedarf,chap:anhang_3}, scale=0.80, offset=6mm -5mm]{anhang_3.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Dienstplanberechnung,chap:anhang_4}, scale=0.80, offset=6mm -5mm]{anhang_4.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Verfassung der KiTa,chap:anhang_5}, scale=0.80, offset=6mm -5mm]{anhang_5.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Grundriss der KiTa,chap:anhang_6}, scale=0.80, offset=6mm -5mm]{anhang_6.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Beobachtungsbogen,chap:anhang_7}, scale=0.80, offset=6mm -5mm]{anhang_7.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Einzel Soziogramm,chap:anhang_8}, scale=0.80, offset=6mm -5mm]{anhang_8.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Kinderfragebogen,chap:anhang_9}, scale=0.80, offset=6mm -5mm]{anhang_9.pdf}
+% 
+% \includepdfset{pagecommand={\pagestyle{scrheadings}}}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Meinungsbild Mittagessen,chap:anhang_10}, scale=0.80, offset=6mm -5mm]{anhang_10.pdf}
+
+% bibliography and other stuff
+\backmatter
+% \pagenumbering{arabic}
+\typeout{===== Section: Literaturverzeichnis}
+\cleardoublepage  
+\phantomsection
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\bibliographystyle{natdin}
+\bibliography{literatur}
+
+\typeout{===== Section: Glossar}
+\renewcommand{\glossaryname}{Glossar}
+\cleardoublepage  
+\phantomsection
+\addcontentsline{toc}{chapter}{Glossar}
+\clearpage
+\printglossaries
+
+%% index
+% \typeout{===== Section: Index}
+\cleardoublepage  
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Index}
+% \printindex
+
+
+
+
+
+
+% \HAWasurency
+
+\end{document}
