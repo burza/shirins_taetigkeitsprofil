@@ -1,4 +1,11 @@
 \documentclass[draft=false,paper=a4,twoside=false,fontsize=11pt,headsepline,BCOR10mm,DIV11]{scrbook}
+% \usepackage{showframe}
+\usepackage{titlesec}
+% \def\chaptertitlename{Section}
+% \titleformat{\chapter}{\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter{:\ }}{0pt}{\Large}{}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter\quad}{0pt}{}
+% \titlespacing{\chapter}{0pt}{-20pt}{30pt}
+\titlespacing{\chapter}{0pt}{-3em}{2em}
 \usepackage[ngerman,english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[babel,german=quotes]{csquotes}
@@ -211,13 +218,13 @@
 % \appendix
 % 
 % \includepdfset{pagecommand={\pagestyle{scrheadings}}}
-% \includepdf[pages=-, addtotoc={1,chapter,0,Kinderankreuzliste,chap:anhang_1}, scale=0.80, offset=6mm -5mm]{anhang_1.pdf}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Interview mit Herrn Strauß,chap:anhang_1}, scale=0.90, offset=6mm -5mm]{Interview.pdf}
 % 
 % \includepdfset{pagecommand={\pagestyle{scrheadings}}}
-% \includepdf[pages=-, addtotoc={1,chapter,0,Berechnung für die Arbeit am Kind,chap:anhang_2}, scale=0.80, offset=6mm -5mm]{anhang_2.pdf} 
+% \includepdf[pages=-, addtotoc={1,chapter,0,Interviewleitfaden zur Erforschung des Berufsfeldes,chap:anhang_2}, scale=0.90, offset=6mm -5mm]{Interviewleifaden.pdf} 
 % 
 % \includepdfset{pagecommand={\pagestyle{scrheadings}}}
-% \includepdf[pages=-, addtotoc={1,chapter,0,Personalbedarf,chap:anhang_3}, scale=0.80, offset=6mm -5mm]{anhang_3.pdf}
+% \includepdf[pages=-, addtotoc={1,chapter,0,Das Shadowing,chap:anhang_3}, scale=0.90, offset=6mm -5mm]{Shadowing.pdf}
 % 
 % \includepdfset{pagecommand={\pagestyle{scrheadings}}}
 % \includepdf[pages=-, addtotoc={1,chapter,0,Dienstplanberechnung,chap:anhang_4}, scale=0.80, offset=6mm -5mm]{anhang_4.pdf}
