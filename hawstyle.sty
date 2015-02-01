@@ -53,6 +53,12 @@
 \newcommand*{\theHAWThesisAuthor}{%
   \haw@theThesisAuthor}
 
+%% author two
+\def\haw@theThesisAuthorTwo{}
+% getter
+\newcommand*{\theHAWThesisAuthorTwo}{%
+  \haw@theThesisAuthorTwo}
+
 %% type
 \def\haw@theThesisType{}
 % getter
@@ -100,6 +106,7 @@
 \define@key[haw]{prop}{Title}{\def\haw@theThesisTitle{#1}}
 \define@key[haw]{prop}{SubTitle}[]{\def\haw@theThesisSubTitle{#1}}
 \define@key[haw]{prop}{Author}{\def\haw@theThesisAuthor{#1}}
+\define@key[haw]{prop}{AuthorTwo}{\def\haw@theThesisAuthorTwo{#1}}
 \define@key[haw]{prop}{EnglishTitle}{\def\haw@theThesisEnglishTitle{#1}}
 \define@key[haw]{prop}{EnglishSubTitle}[]{\def\haw@theThesisEnglishSubTitle{#1}}
 \define@key[haw]{prop}{ThesisType}{\def\haw@theThesisType{#1}}
@@ -120,6 +127,7 @@
       `\string\HAWThesisProperties[Title={Your Title}'\MessageBreak
       `\string              EnglishTitle={Your English Title}'\MessageBreak
       `\string              Author={Your Name}'\MessageBreak
+      `\string              AuthorTwo={Your Name}'\MessageBreak
       to your document.}}
   \ifthenelse{\equal{\theHAWThesisAuthor}{}}{
     \PackageWarningNoLine{hawstyle}{%
@@ -127,6 +135,7 @@
       `\string\HAWThesisProperties[Title={Your Title}'\MessageBreak
       `\string              EnglishTitle={Your English Title}'\MessageBreak
       `\string              Author={Your Name}'\MessageBreak
+      `\string              AuthorTwo={Your Name}'\MessageBreak
       to your document.}}
   \ifthenelse{\equal{\theHAWThesisEnglishTitle}{}}{
     \PackageWarningNoLine{hawstyle}{%
@@ -134,6 +143,7 @@
       `\string\HAWThesisProperties[Title={Your Title}'\MessageBreak
       `\string              EnglishTitle={Your English Title}'\MessageBreak
       `\string              Author={Your Name}'\MessageBreak
+      `\string              AuthorTwo={Your Name}'\MessageBreak
       to your document.}}
 
   \haw@createFullTitle{\haw@theThesisTitle}{\haw@theThesisSubTitle}
@@ -168,6 +178,7 @@
       `\string\HAWThesisProperties[Title={Your Title}'\MessageBreak
       `\string              EnglishTitle={Your English Title}'\MessageBreak
       `\string              Author={Your Name}'\MessageBreak
+      `\string              AuthorTwo={Your Name}'\MessageBreak
       to your document.}}
   \ifthenelse{\equal{\theHAWThesisAuthor}{}}{
     \PackageWarningNoLine{hawstyle}{%
@@ -175,6 +186,7 @@
       `\string\HAWThesisProperties[Title={Your Title}'\MessageBreak
       `\string              EnglishTitle={Your English Title}'\MessageBreak
       `\string              Author={Your Name}'\MessageBreak
+      `\string              AuthorTwo={Your Name}'\MessageBreak
       to your document.}}
 
   %% use HAW for online version, nothing if the file is to be printed
@@ -271,7 +283,13 @@
            \medskip\LARGE\theHAWThesisSubTitle\\}%
         
           \bigskip
+          \bigskip
+          \bigskip
           \bfseries\normalsize\theHAWThesisAuthor\\
+
+          \bigskip
+          \bigskip
+          \bfseries\normalsize\theHAWThesisAuthorTwo\\
         }
         }%
       \end{minipage}%

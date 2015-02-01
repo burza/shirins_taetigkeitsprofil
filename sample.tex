@@ -1,4 +1,4 @@
-\documentclass[draft=false,paper=a4,twoside=false,fontsize=11pt,headsepline,BCOR10mm,DIV11]{scrbook}
+\documentclass[draft=false,paper=a4,twoside=false,fontsize=11pt,headsepline,BCOR10mm,DIV11,liststotoc]{scrbook}
 % \usepackage{showframe}
 \usepackage{titlesec}
 % \def\chaptertitlename{Section}
@@ -17,7 +17,7 @@
 \usepackage{pifont}
 \usepackage{microtype}
 \usepackage{textcomp}
-%% \usepackage[intoc,german,prefix]{nomencl}
+% \usepackage[intoc,german,prefix]{nomencl}
 \usepackage{setspace}
 \usepackage{makeidx}
 \usepackage{listings}
@@ -147,16 +147,16 @@
 
 %%%%%
 %% customize (see readme.pdf for supported values)
-\HAWThesisProperties{Author={Shirin Bediako \\ MatrNr.: 2088775 \\ Sahlenburger Str. 4 \\ 22309 Hamburg \\ shirin.bediako@haw-hamburg.de}
+\HAWThesisProperties{Author={Shirin Bediako \\ MatrNr.: 2088775 \\ shirin.bediako@haw-hamburg.de}
+                    ,AuthorTwo={Jelka Drücker \\ MatrNr.:2079988 \\ jelka.drücker@haw-hamburg.de}
                     ,Title={Die bikulturelle Identit"atsentwicklung afrodeutscher Kinder}
                     ,SubTitle={Bikulturalit"at als Einflussfaktor auf die Identit"atsentwicklung afrodeutscher Kinder}
                     ,EnglishTitle={Die bikulturelle Identit"atsentwicklung afrodeutscher Kinder}
                     ,ThesisType={Hausarbeit}
-                    ,ExaminationType={Einführung Institutionsentwicklung und Management}
+                    ,ExaminationType={Einführung in die Familienberatung}
                     ,DegreeProgramme={Bildung und Erziehung in der Kindheit}
-                    ,ThesisExperts={Prof. Dr. phil. Daniela Ulber}
-                    % ,ThesisExperts={Prof.\ Dr.\ Zhen Ru Dai \and Prof.\ Dr.\ Stefan Sarstedt}
-                    ,ReleaseDate={28. August 2013}
+                    ,ThesisExperts={Prof.\ Dr.\ Wolfgang\ Hantel-Quitmann}
+                    ,ReleaseDate={17. Oktober 2013}
                   }
 
 %% title
@@ -184,7 +184,7 @@
 \newpage
 %% enable if these lists should be shown on their own page
 % \listoftables
-% \listoffigures
+\listoffigures
 % \lstlistoflistings
 
 %% main
